@@ -70,7 +70,7 @@ int Game_Controller::parse_data(const char* uid,
     float z = (float) d["move"]["z"].GetDouble();
     float a = (float) d["move"]["a"].GetDouble();
     float b = (float) d["move"]["b"].GetDouble();
-    CCLOG ("%s  ===> (%f,%f,%f)",uid,x,y,z);
+    CCLOG (" Game_Controller::parse_data :%s  ===> (%f,%f,%f)",uid,x,y,z);
     Move_Msg v (x,y,z,a,b,uid);
   
     
