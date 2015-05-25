@@ -742,7 +742,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = /Users/jiangtao/workspace/clientsdk/clientsdk/GP_Client/ios/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../GP_Client/ios/lib\"";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
@@ -777,7 +777,7 @@
 				);
 				INFOPLIST_FILE = ios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = /Users/jiangtao/workspace/clientsdk/clientsdk/GP_Client/ios/lib;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../GP_Client/ios/lib\"";
 				OTHER_LDFLAGS = (
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
