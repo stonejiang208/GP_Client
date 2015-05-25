@@ -1,0 +1,23 @@
+<Solution>
+  <PropertyGroup Name="Demo" Version="2.2.6.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="status">
+          <Project Name="status_bar.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="welcome">
+          <Project Name="create-user.csd" Type="Scene" />
+          <Project Name="welcome.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="lobby">
+          <Project Name="lobby.csd" Type="Scene" />
+        </Folder>
+        <Folder Name="settings">
+          <Project Name="settings.csd" Type="Scene" />
+          <Project Name="operator-layer.csd" Type="Scene" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

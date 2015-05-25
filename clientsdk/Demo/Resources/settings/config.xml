@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>World_Factory_Name</key><string>World_Factory</string>
+	<key>big_world_loc</key>
+  <string>001</string>
+	<!--<key>game_world_name</key>	<string>Balloon_Game_World</string> -->
+  <key>game_world_name</key> <string>demo_service</string>
+	<key>game_world_loc</key>	<string>001</string>
+	<key>vendor_id</key>	<string>tao-studio</string>
+	<key>vendor_key</key>	<string>6F7115D1-8208-4D10-83C1-53328A463586</string>
+	<key>server_name</key>	<string>192.168.1.91</string>
+ 	<key>server_port</key>	<int>2809</int>
+  <key>value</key>	<float>28.09</float>
+</dict>
+</plist>
