@@ -1,6 +1,6 @@
 // -*- C++ -*-
 //===========================================================================
-/* Time-stamp: <2015-05-26 15:31:08 by jiangtao> */
+/* Time-stamp: <2015-05-26 15:53:59 by android> */
 
 /* @file Data_Define.h
  * $Id: Data_Define.h 2015-05-07 06:18:43 jiangtao 
@@ -15,6 +15,7 @@
 #include "GP_Client/Game_Data_T.h"
 #include <string>
 #include <list>
+#include <stddef.h> //size_t
 typedef std::list <std::string> String_List;
 typedef std::list<int> Int_List;
 

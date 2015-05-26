@@ -1,6 +1,6 @@
 // -*- C++ -*-
 //===========================================================================
-/* Time-stamp: <2015-05-09 13:44:45 by jiangtao> */
+/* Time-stamp: <2015-05-26 00:10:54 by android> */
 
 /* @file Subject.h
  * $Id: Subject.h 2015-02-27 14:02:41 jiangtao 
@@ -11,6 +11,7 @@
 
 #ifndef SUBJECT_H
 #define SUBJECT_H
+#include <stddef.h>
 #include <list>
 #include "Namespace.h"
 

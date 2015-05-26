@@ -19,15 +19,12 @@ LOCAL_SRC_FILES += $(FILE_LIST:$(LOCAL_PATH)/%=%)
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../
-
+PRJ_ROOT := $(LOCAL_PATH)/../../..
 ### step 3
 ## {{ lib
 ##### step 3.1
-LOCAL_C_INCLUDES += $(GP_ROOT)/GP_Client
-LOCAL_C_INCLUDES += $(ACE_ROOT)
 
-LOCAL_LDLIBS += -L$(GP_ROOT)/lib
-LOCAL_LDLIBS += -L$(ACE_ROOT)/lib
+LOCAL_LDLIBS := -L$(PRJ_ROOT)/android/lib
 
 #### step 3.2
 LOCAL_LDLIBS +=-lGP_Client
