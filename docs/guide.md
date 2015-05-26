@@ -137,8 +137,9 @@ void update_ui_status (int status)
 
 * 初始化用户或初始化游客
 
+	头文件
 ``` cpp
-class World_Factor
+class World_Factory
 {
 //...
 	int create_user (const char* account_name,
