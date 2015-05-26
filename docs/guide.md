@@ -272,7 +272,7 @@ void TerrainWalkThru::onTouchesEnd(
 }
 ```
 
-	对消息编码，为简明，本例用的json
+  对消息编码，为简明，本例用的json
 
 ``` cpp
 void My_User::move_to(float x, float y, float z,float a,float b)
@@ -308,3 +308,6 @@ void My_User::move_to(float x, float y, float z,float a,float b)
 ```
 
 * 处理服务端发送的消息
+  * 定义主题
+  * 定义网络消息编号
+  * 观察者订阅放题并处理消息
