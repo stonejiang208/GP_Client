@@ -84,18 +84,18 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 
 1. 初始化Game_Cloud
 
-World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能：
+	World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能：
 
 2. 订阅应用的状态
 
-控制器初始化后，SDK内部会向服务器发起会话请求，如果成功，应用端会与服务器建立连接，之后，服务器与应用双方都能够进行通讯，定点与传统的客户端发起请求，服务端作一个简单应答不同。
+	控制器初始化后，SDK内部会向服务器发起会话请求，如果成功，应用端会与服务器建立连接，之后，服务器与应用双方都能够进行通讯，定点与传统的客户端发起请求，服务端作一个简单应答不同。
 
-示例中的
+	示例中的
 
-Welcome_Layer
+	Welcome_Layer
 
-从 "GP_Client::App_Listener"
-派生，同时重载
+	从 "GP_Client::App_Listener"
+	派生，同时重载
 ``` cpp
 void on_status (int status);
 ```
@@ -106,7 +106,6 @@ void on_status (int status);
 ``` cpp
 void update_ui_status (int status)
 ```
-
 控制界面UI元素在不同状态下的显示外观。
 
 
