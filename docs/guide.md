@@ -272,7 +272,7 @@ void TerrainWalkThru::onTouchesEnd(
 }
 ```
 
-# 对消息编码，为简明，本例用的json
+	对消息编码，为简明，本例用的json
 
 ``` cpp
 void My_User::move_to(float x, float y, float z,float a,float b)
