@@ -41,6 +41,7 @@ GP_Server
 如下图:
 
 // todo:｛增加屏幕图示,下图只是占个位置｝
+
 ![Git Workflow 1](https://docs.jboss.org/author/download/attachments/4784485/git_wf_1.png)
 
 ### android 接入
@@ -140,7 +141,8 @@ void update_ui_status (int status)
 * 初始化用户或初始化游客
 
 	头文件
-``` cpp
+
+```cpp
 class World_Factory
 {
 //...
@@ -155,7 +157,15 @@ class World_Factory
     int init_guest (const char* user_id);
 //...
 };
+```
 
+
+```cpp
+ World_Factory* wf = World_Factory::instance ();
+  
+  std::string uid = Local_Storage::instance ()->get_string_value ("user_id");
+  int retval = wf->init_guest (uid.c_str());
+ 
 ```
 * 进入游戏大厅
 
