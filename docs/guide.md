@@ -40,7 +40,9 @@ GP_Server
 同样，在"Library Search Paths"中，加入 lib的路径。
 如下图:
 
-// todo:｛增加屏幕图示｝
+// todo:｛增加屏幕图示,下图只是占个位置｝
+![Git Workflow 1](https://docs.jboss.org/author/download/attachments/4784485/git_wf_1.png)
+
 ### android 接入
 
 
