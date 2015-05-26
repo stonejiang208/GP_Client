@@ -140,7 +140,20 @@ void update_ui_status (int status)
 3. 初始化用户或初始化游客
 
 ``` cpp
+class World_Factor
+{
+//...
+	int create_user (const char* account_name,
+									 const char* account_type,
+									 const char* passwd);
+									 
+	int init_user (const char* user_id,
+								 const char* passwd,
+								 const char* nickname);
 
+    int init_guest (const char* user_id);
+//...
+};
 ```
 4. 进入游戏大厅
 
