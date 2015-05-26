@@ -87,7 +87,17 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 
 
 1. 初始化Game_Cloud
+``` cpp
+  World_Factory* wf = World_Factory::instance ();
+  int retval = wf->init_game_cloud(
+                                   HOST_NAME,
+                                   2809,
+                                   "World_Factory",
+                                   "001");
+  
 
+
+```
 	World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能：
 
 2. 订阅应用的状态
@@ -104,15 +114,18 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 void on_status (int status);
 ```
 
-	根据参数status，即可获知当前的连接状态.示例中，通过 另一个函数
+	根据参数status，即可获知当前的连接状态，示例中，通过 另一个函数
 ``` cpp
 void update_ui_status (int status)
 ```
-	控制界面UI元素在不同状态下的显示外观。
+控制界面UI元素在不同状态下的显示外观。
 
 
 3. 初始化用户或初始化游客
 
+``` cpp
+
+```
 4. 进入游戏大厅
 
 5. 获取房间列表，进入游戏
