@@ -100,19 +100,19 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 
 	World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能。
 
-``` cpp
-class World_Factory
-{
- // ...
-
-int init_game_cloud (
+	``` cpp
+	class World_Factory
+	{
+	// ...
+	
+	int init_game_cloud (
 	const char* address,
 	unsigned short port,
 	const char* world_id,
 	const char* world_loc);
 
- // ...
-};
+	// ...
+	};
 
 ```
 
@@ -126,14 +126,14 @@ int init_game_cloud (
 
 	从 "GP_Client::App_Listener"
 	派生，同时重载
-``` cpp
-void on_status (int status);
-```
+	``` cpp
+		void on_status (int status);
+	```
 
 	根据参数status，即可获知当前的连接状态，示例中，通过 另一个函数
-``` cpp
-void update_ui_status (int status)
-```
+	``` cpp
+	void update_ui_status (int status)
+	```
 	控制界面UI元素在不同状态下的显示外观。
 
 
