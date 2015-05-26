@@ -87,6 +87,7 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 
 
 1. 初始化Game_Cloud
+
 ``` cpp
   World_Factory* wf = World_Factory::instance ();
   int retval = wf->init_game_cloud(
@@ -94,10 +95,9 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
                                    2809,
                                    "World_Factory",
                                    "001");
-  
-
-
 ```
+								   
+
 	World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能：
 
 2. 订阅应用的状态
