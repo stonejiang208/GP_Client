@@ -517,7 +517,7 @@ void TerrainWalkThru::on_move(const char *uid,
 
 ```
 
-## 服务端的SDK GP_Server的使用
+## 服务端 SDK (SDK GP_Server) 的使用
 ### 服务端SDK简介
 
 GP_Server为开发者提供了一个简洁又功能强大的框架。
@@ -539,7 +539,7 @@ GP_Server 将被编译成动态库，然后由一个同一的加载器加载
 ### 支持的平台
 
 * Linux
-Ubuntu 12.04, 14.04 测试
+Ubuntu 12.04, 14.04 
 
 * Windows
 
