@@ -354,4 +354,78 @@ enum
 ```
   * 观察者订阅放题并处理消息
 
+``` cpp
+class TerrainWalkThru;
 
+class Move_Msg_Observer
+: public Observer
+{
+  typedef Observer Base;
+  typedef TerrainWalkThru UI;
+public:
+  Move_Msg_Observer (Subject* s, UI* ui);
+  virtual void update (const Subject* s);
+private:
+  UI* ui_;
+};
+
+```
+
+* 解析消息格式
+
+``` cpp
+int Game_Controller::parse_data(const char* uid,
+                                const rapidjson::Document &d)
+{
+  if (!d.IsObject())
+  {
+    return -1;
+  }
+  
+  if (d.HasMember("move") && d.IsObject())
+  {
+    float x = (float) d["move"]["x"].GetDouble();
+    float y = (float) d["move"]["y"].GetDouble();
+    float z = (float) d["move"]["z"].GetDouble();
+    float a = (float) d["move"]["a"].GetDouble();
+    float b = (float) d["move"]["b"].GetDouble();
+    CCLOG (" Game_Controller::parse_data :%s  ===> (%f,%f,%f)",uid,x,y,z);
+    Move_Msg v (x,y,z,a,b,uid);
+  
+    
+    Data_Manager* dm = this->data_manager();
+    Move_Msg_Data* data = (Move_Msg_Data*) dm->find_data_by_id(kMove_Msg);
+    data->value (v);
+    
+  }
+  return 0;
+}
+
+```
+
+* 处理显示
+
+``` cpp
+void TerrainWalkThru::on_move(const char *uid,
+                              float x, float y, float z,
+                              float a,float b)
+{
+  //get user by id
+  Player* p = getChildByName<Player*> (uid);
+  if (p)
+  {
+    Vec3 collisionPoint (x,y,z);
+  
+    p->_headingAngle = a;
+    p->_headingAxis.y = b;
+    p->_targetPos = collisionPoint;
+    p->forward();
+  }
+  else
+  {
+    // create other user
+    create_other(uid,x,y,z);
+  }
+}
+
+```
