@@ -134,7 +134,7 @@ void on_status (int status);
 ``` cpp
 void update_ui_status (int status)
 ```
-控制界面UI元素在不同状态下的显示外观。
+	控制界面UI元素在不同状态下的显示外观。
 
 
 3. 初始化用户或初始化游客
