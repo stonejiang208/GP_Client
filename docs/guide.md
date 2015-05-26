@@ -96,6 +96,46 @@ LOCAL_LDLIBS +=-lACE
 ## lib}}
 
 ```
+
+   * 用cocos 编译打包
+
+~~~~~
+cd  ./clientsdk/Demo/
+ls -al
+drwxr-xr-x  14 android  staff   476 May 26 09:50 .
+drwxr-xr-x  11 android  staff   374 May 26 16:19 ..
+-rw-r--r--   1 android  staff    76 May 26 09:26 .cocos-project.json
+-rw-r--r--   1 android  staff  5026 May 26 09:26 CMakeLists.txt
+drwxr-xr-x  38 android  staff  1292 May 26 16:19 Classes
+drwxr-xr-x  13 android  staff   442 May 26 09:26 Resources
+drwxr-xr-x   3 android  staff   102 May 26 09:50 bin
+drwxr-xr-x  17 android  staff   578 May 26 09:26 cocos2d
+drwxr-xr-x  23 android  staff   782 May 26 16:40 proj.android
+drwxr-xr-x  10 android  staff   340 May 26 09:26 proj.android-studio
+drwxr-xr-x   5 android  staff   170 May 26 09:26 proj.ios_mac
+drwxr-xr-x   3 android  staff   102 May 26 09:26 proj.linux
+drwxr-xr-x  12 android  staff   408 May 26 09:26 proj.win32
+drwxr-xr-x   6 android  staff   204 May 26 09:26 proj.win8.1-universaldrwxr-xr-x  14 android  staff   476 May 26 09:50 .
+drwxr-xr-x  11 android  staff   374 May 26 16:19 ..
+~~~~~
+
+~~~~
+$ cocos run -p android
+~~~~
+
+   * 用ant打包
+
+  进入 Demo/proj.android目录
+
+~~~~
+cd ./proj.android
+
+./build_native.py
+
+./ant debug install
+~~~~
+
+
 #### 用eclipse
 
 #### 用android studio
