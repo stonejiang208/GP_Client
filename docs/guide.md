@@ -33,11 +33,6 @@ clientsdk/clientsdk/ios/lib  // libs for ios
 "Search Paths",在Header Search中，加入 include的路径。
 
 同样，在"Library Search Paths"中，加入 lib的路径。
-如下图:
-
-// todo:｛增加屏幕图示,下图只是占个位置｝
-
-![Git Workflow 1](https://docs.jboss.org/author/download/attachments/4784485/git_wf_1.png)
 
 ### android 接入
 #### 用cocos 或ant 打包
