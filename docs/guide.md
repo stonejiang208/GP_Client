@@ -34,28 +34,80 @@ GP_Server
 
 #### 导入库
 
-执行
+在XCode中，选PROJECT的TARGETS选中"Demo-mobile"，然后在Build Settings中，找到
+"Search Paths",在Header Search中，加入 include的路径。
 
-~~~~~~~~~~~
-#./update.sh
-~~~~~~~~~~~
+同样，在"Library Search Paths"中，加入 lib的路径。
+如下图:
+
+// todo:｛增加屏幕图示｝
+
+#### 代码集成概述
+
+##### 基本步骤
 
 
-从GP_Client.tar.bz2解压得到库文件。
+1. 设置本地存储的可写路径
 
+2. 初始化SDK
 
-#### 代码集成
-
-1. 实现User类 （My_User.{h,cpp})，最好实现为单体
+3. 实现User类 （My_User.{h,cpp})，最好实现为单体
 （可以不重载任何函数）
 
-2. 实现Controller类 (My_Controller.{h,cpp}) 最好实现为单体
-   
-3. 定义交互的数据类型
 
-4. 实现数据的显示
+4. 实现Controller类 (My_Controller.{h,cpp}) 最好实现为单体
+   
+5. 定义交互的数据类型
+
+6. 实现数据的显示
 
 5. 实现数据的发布和订阅
+
+
+#####  代码示例
+1. 包含SDK头文件
+
+SDK内部实现做到了跨平台的工作，为不同平台的提供了一致的文件，这减少开发人员对多同平支持的工作量。
+
+//todo
+
+2. 设置本地存储的可写路径
+
+
+3. 创建用户和控制器
+
+4. 初始化控制器
+
+
+#### 代码集成详解
+
+
+1. 初始化Game_Cloud
+
+World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能：
+
+2. 订阅应用的状态
+
+控制器初始化后，SDK内部会向服务器发起会话请求，如果成功，应用端会与服务器建立连接，之后，服务器与应用双方都能够进行通讯，定点与传统的客户端发起请求，服务端作一个简单应答不同。
+
+示例中的
+
+Welcome_Layer
+
+从 "GP_Client::App_Listener"
+派生，同时重载
+``` cpp
+void on_status (int status);
+
+根据参数status，即可获知当前的连接状态.
+
+示例中，通过 另一个函数
+
+void update_ui_status (int status)
+
+控制界面UI元素在不同状态下的显示外观。
+
+
 
 
 
