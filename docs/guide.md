@@ -309,5 +309,48 @@ void My_User::move_to(float x, float y, float z,float a,float b)
 
 * 处理服务端发送的消息
   * 定义主题
+
+``` cpp
+class Move_Msg
+{
+public:
+  Move_Msg (float x = 0,
+            float y = 0,
+            float z = 0,
+            float a = 0,
+            float b = 0,
+            const char* uid = "")
+  : x_ (x)
+  , y_ (y)
+  , z_ (z)
+  , a_ (a)
+  , b_ (b)
+  , uid_ (uid)
+  {
+    
+  }
+  float x_;
+  float y_;
+  float z_;
+  float a_;
+  float b_;
+  std::string uid_;
+};
+
+typedef Game_Data_T<Move_Msg> Move_Msg_Data;
+
+```
+
   * 定义网络消息编号
+``` cpp
+enum
+{
+	kData_Base = 0x00001000,
+	kChat_Data,
+    kApp_List,
+    kMove_Msg, // <---- this is my cmd_id
+};
+```
   * 观察者订阅放题并处理消息
+
+
