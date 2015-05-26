@@ -169,6 +169,30 @@ class World_Factory
 ```
 * 进入游戏大厅
 
+	异步调用：查找游戏房间
+
+```cpp
+  Data_Manager* dm = Game_Controller::instance ()->data_manager();
+  Game_Data* data = dm->find_data_by_id(kApp_List);
+  this->subject(data);
+  
+  // get room list
+  try
+  {
+    User* user = World_Factory::instance ()->get_user ();
+    user->get_app_list ("a","key","demo_service");
+  }
+  catch (const std::exception& ex)
+  {
+    CCLOG ("Lobby_Layer::onEnter() exception: %s",ex.what());
+  }
+```
+反回的结果会更新代号为kApp_List的游戏数据。
+
+使 Lobby_Layer作为观察者订阅kApp_List数据。
+
+
+
 
 * 获取房间列表，进入游戏
 
