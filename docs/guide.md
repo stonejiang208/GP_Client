@@ -253,7 +253,58 @@ void Lobby_Layer::onEnter ()
 
  ```
 
+* 发送消息到服务端
 
+在游戏主场景中，玩家触摸了屏幕，人物则前往屏幕所在的点，然后把这个点以及玩家的状态发送到服务端。
 
+```cpp
+void TerrainWalkThru::onTouchesEnd(
+  const std::vector<cocos2d::Touch*>& touches, cocos2d::Event* event)
+{
+//...
+   My_User::instance ()->move_to( collisionPoint.x,
+       collisionPoint.y,
+       collisionPoint.z,
+       angle,
+       _player->_headingAxis.y);
+//...
 
+}
+```
 
+# 对消息编码，为简明，本例用的json
+
+``` cpp
+void My_User::move_to(float x, float y, float z,float a,float b)
+{
+  CCLOG ("My_User::move_to (%f,%f,%f)",x,y,z);
+  Document d;
+  d.SetObject();
+  rapidjson::Value move;
+  move.SetObject();
+  move.AddMember("x",x,d.GetAllocator());
+  move.AddMember("y",y,d.GetAllocator());
+  move.AddMember("z",z,d.GetAllocator());
+  move.AddMember("a",a,d.GetAllocator());
+  move.AddMember("b",b,d.GetAllocator());
+
+  d.AddMember("move",move,d.GetAllocator());
+  StringBuffer buffer;
+  Writer<StringBuffer> writer(buffer);
+  d.Accept(writer);
+  
+  unsigned int cmd_id = CMD_GAME;
+  const char* msg = buffer.GetString();
+  try
+  { 
+     this->send_data(cmd_id,msg, strlen(msg)+1);
+  }
+  catch (const std::exception& ex)
+  {
+     // something wrong
+  }
+  CCLOG ("msg==> [%s]",msg);
+}	
+```
+
+* 处理服务端发送的消息
