@@ -167,7 +167,7 @@ class World_Factory
   int retval = wf->init_guest (uid.c_str());
  
 ```
-* 进入游戏大厅
+* 获取房间列表(app_list)
 
 	异步调用：查找游戏房间
 
@@ -235,16 +235,23 @@ void Lobby_Layer::onEnter ()
 
 
 
-* 获取房间列表，进入游戏
+* 进入游戏房间
+
+``` cpp
+ User* user = World_Factory::instance ()->get_user ();
+  // baccart_lobby
+  user->enter_into_app("appid", "appkey","demo_service",name.c_str());
+
+```
 
 * 安全退出
 
    使用示例
-   ```cpp
+```cpp
      World_Factory* wf = World_Factory::instance ();
 	 wf->shutdown ();
 
-   ```
+ ```
 
 
 
