@@ -128,7 +128,7 @@ class World_Factory
 void on_status (int status);
 ```
 
-根据参数status，即可获知当前的连接状态，示例中，通过 另一个函数
+	根据参数status，即可获知当前的连接状态，示例中，通过 另一个函数
 ``` cpp
 void update_ui_status (int status)
 ```
