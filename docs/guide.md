@@ -12,23 +12,18 @@ SDK又分为户端的SDK(简记为"GP_Client")和服务端SDK ("GP_Server")。
 
 ### SDK的组成
 ~~~~~~
-GP_Clint
+clientsdk/docs/guide  // it's me
 
- include
- ios
-	 lib
- ios-simulator
-    lib
-
- android
+clientsdk/clientsdk/GP_Client  // include files
 	
- os-x
- win32
- linux
-GP_Server
-~~~~~~
-## 使用步骤
+clientsdk/clientsdk/Demo  // demo project with cocos2d-x 3.6
+clientsdk/clientsdk/ccb   // ui for Demo
+clientsdk/clientsdk/android/lib // libs for android
+clientsdk/clientsdk/ios/lib  // libs for ios
 
+~~~~~~
+
+## 使用步骤
 
 ### iOS 接入
 
@@ -46,7 +41,13 @@ GP_Server
 
 ### android 接入
 
+#### 用cocos 打包
 
+#### 用ant 打包
+
+#### 用eclips
+
+#### 用android studio
 
 
 ## 代码集成概述
