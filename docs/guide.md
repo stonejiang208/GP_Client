@@ -158,7 +158,7 @@ class World_Factory
 //...
 };
 ```
-
+	使用示例：
 
 ```cpp
  World_Factory* wf = World_Factory::instance ();
@@ -173,6 +173,13 @@ class World_Factory
 * 获取房间列表，进入游戏
 
 * 安全退出
+
+   使用示例
+   ```cpp
+     World_Factory* wf = World_Factory::instance ();
+	 wf->shutdown ();
+
+   ```
 
 
 
