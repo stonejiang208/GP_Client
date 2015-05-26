@@ -86,7 +86,7 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 ### 代码集成详解
 
 
-1. 初始化Game_Cloud
+*  初始化Game_Cloud
 
 ``` cpp
   World_Factory* wf = World_Factory::instance ();
@@ -114,7 +114,7 @@ class World_Factory
 
 ```
 
-2. 订阅应用的状态
+*  订阅应用的状态
 
 	控制器初始化后，SDK内部会向服务器发起会话请求，如果成功，应用端会与服务器建立连接，之后，服务器与应用双方都能够进行通讯，定点与传统的客户端发起请求，服务端作一个简单应答不同。
 
@@ -152,8 +152,10 @@ class World_Factor
     int init_guest (const char* user_id);
 //...
 };
+
 ```
 4. 进入游戏大厅
+
 
 5. 获取房间列表，进入游戏
 
