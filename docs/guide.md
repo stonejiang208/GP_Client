@@ -98,7 +98,23 @@ SDK内部实现做到了跨平台的工作，为不同平台的提供了一致�
 ```
 								   
 
-	World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能：
+World_Factory作为一个工厂类，除了创建用户和控制器之外，它还提供了一个初始化的功能。
+
+``` cpp
+class World_Factory
+{
+ // ...
+
+int init_game_cloud (
+	const char* address,
+	unsigned short port,
+	const char* world_id,
+	const char* world_loc);
+
+ // ...
+};
+
+```
 
 2. 订阅应用的状态
 
