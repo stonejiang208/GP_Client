@@ -186,11 +186,52 @@ class World_Factory
   {
     CCLOG ("Lobby_Layer::onEnter() exception: %s",ex.what());
   }
+ ```
+ 异步调用的返回：
+
+``` cpp
+void My_User::on_get_app_list_complete (
+	const char* app_id,
+	const String_List& app_list)
+{
+  Data_Manager* dm = Game_Controller::instance ()->data_manager();
+  String_List_Data* data = (String_List_Data*) dm->find_data_by_id(kApp_List);
+  if (data)
+  {
+    data->value (app_list);
+  }
+ 
+}
+
 ```
+
 反回的结果会更新代号为kApp_List的游戏数据。
 
 使 Lobby_Layer作为观察者订阅kApp_List数据。
 
+``` cpp
+class Lobby_Layer
+// ...
+:public GP_Client::Observer
+{
+public:
+virtual void upadte (const GP_Client::Subject* subject);
+};
+```
+
+用观察者订阅主题：
+
+
+``` cpp
+void Lobby_Layer::onEnter ()
+{
+//...
+ Data_Manager* dm = Game_Controller::instance ()->data_manager();
+  Game_Data* data = dm->find_data_by_id(kApp_List);
+  this->subject(data);
+//...
+}
+```
 
 
 
