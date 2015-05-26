@@ -1,6 +1,6 @@
 // -*- C++ -*-
 //===========================================================================
-/* Time-stamp: <2015-05-20 07:48:32 by jiangtao> */
+/* Time-stamp: <2015-05-26 15:48:17 by jiangtao> */
 
 /* @file Data_Subscribers.h
  * $Id: Data_Subscribers.h 2015-05-19 23:48:25 jiangtao 
@@ -15,8 +15,6 @@
 USING_NS_GP_CLIENT;
 
 class TerrainWalkThru;
-
-
 
 class Move_Msg_Observer
 : public Observer
