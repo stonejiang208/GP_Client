@@ -1,6 +1,6 @@
 #ifndef TERRAIN_TESH_H
 
-
+#include "cocos2d.h"
 #include "3d/CCSprite3D.h"
 #include "3d/CCTerrain.h"
 #include "2d/CCCamera.h"
