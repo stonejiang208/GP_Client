@@ -98,6 +98,7 @@ Welcome_Layer
 派生，同时重载
 ``` cpp
 void on_status (int status);
+```
 
 根据参数status，即可获知当前的连接状态.
 
