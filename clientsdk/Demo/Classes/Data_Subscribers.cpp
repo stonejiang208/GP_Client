@@ -1,6 +1,6 @@
 // -*- C++ -*-
 //===========================================================================
-/* Time-stamp: <2015-05-20 07:48:40 by jiangtao> */
+/* Time-stamp: <2015-05-26 15:47:50 by android> */
 
 /* @file Data_Subscribers.cpp
  * $Id: Data_Subscribers.cpp 2015-05-19 23:48:39 jiangtao Exp $
@@ -8,7 +8,6 @@
  * @author:Stone Jiang<jiangtao@tao-studio.net>
  */
 //===========================================================================
-
 
 #include "Data_Subscribers.h"
 #include "Data_Define.h"
