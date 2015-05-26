@@ -40,13 +40,63 @@ clientsdk/clientsdk/ios/lib  // libs for ios
 ![Git Workflow 1](https://docs.jboss.org/author/download/attachments/4784485/git_wf_1.png)
 
 ### android 接入
+#### 用cocos 或ant 打包
+* 修改 AndroidManifest.xml增加权限
 
+```xml
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+```
 
-#### 用cocos 打包
+* 修改Application.mk
 
-#### 用ant 打包
+增加
 
-#### 用eclips
+``` makefile
+## step 1
+APP_CPPFLAGS += -DACE_HAS_CUSTOM_EXPORT_MACROS=0 -D__ACE_INLINE__ -DACE_AS_STATIC_LIBS  -DTAO_AS_STATIC_LIBS
+
+```
+
+* 修改Android.mk
+
+``` makefile
+### step 2
+LOCAL_SRC_FILES := hellocpp/main.cpp \
+##                   ../../Classes/AppDelegate.cpp \
+##                   ../../Classes/HelloWorldScene.cpp
+FILE_LIST := $(wildcard $(LOCAL_PATH)/../../Classes/*.cpp)
+LOCAL_SRC_FILES += $(FILE_LIST:$(LOCAL_PATH)/%=%)
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../
+PRJ_ROOT := $(LOCAL_PATH)/../../..
+### step 3
+## {{ lib
+##### step 3.1
+
+LOCAL_LDLIBS := -L$(PRJ_ROOT)/android/lib
+
+#### step 3.2
+LOCAL_LDLIBS +=-lGP_Client
+LOCAL_LDLIBS +=-lGP_Application
+LOCAL_LDLIBS +=-lGP_World_Factory
+LOCAL_LDLIBS +=-lGP_Common
+LOCAL_LDLIBS +=-lTAO_CosNaming
+LOCAL_LDLIBS +=-lTAO_Utils
+LOCAL_LDLIBS +=-lTAO_Svc_Utils
+LOCAL_LDLIBS +=-lTAO_Messaging
+LOCAL_LDLIBS +=-lTAO_CodecFactory
+LOCAL_LDLIBS +=-lTAO_PI
+LOCAL_LDLIBS +=-lTAO_BiDirGIOP
+LOCAL_LDLIBS +=-lTAO_PortableServer
+LOCAL_LDLIBS +=-lTAO_AnyTypeCode
+LOCAL_LDLIBS +=-lTAO_Valuetype
+LOCAL_LDLIBS +=-lTAO
+LOCAL_LDLIBS +=-lACE
+## lib}}
+
+```
+#### 用eclipse
 
 #### 用android studio
 
