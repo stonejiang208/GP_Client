@@ -239,8 +239,8 @@ void Lobby_Layer::onEnter ()
 
 ``` cpp
  User* user = World_Factory::instance ()->get_user ();
-  // baccart_lobby
-  user->enter_into_app("appid", "appkey","demo_service",name.c_str());
+
+ user->enter_into_app("appid", "appkey","demo_service",name.c_str());
 
 ```
 
