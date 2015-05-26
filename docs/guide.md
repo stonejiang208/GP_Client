@@ -342,6 +342,7 @@ typedef Game_Data_T<Move_Msg> Move_Msg_Data;
 ```
 
   * 定义网络消息编号
+
 ``` cpp
 enum
 {
