@@ -23,12 +23,13 @@ AppDelegate::AppDelegate() {
   CCLOG ("the writeable path is [%s]",
          writeable_path.c_str());
   
-  const std::string settings_file =
-  FileUtils::getInstance()->fullPathForFilename("settings/config.xml");
-	CCLOG ("setting_file = %s",settings_file.c_str());
+  //const std::string settings_file =
+ // FileUtils::getInstance()->fullPathForFilename("settings/config.xml");
+//	CCLOG ("setting_file = %s",settings_file.c_str());
   Init_Client::init ();
-  Local_Settings* settings = Local_Settings::instance ();
-  int retval = settings->load (settings_file);
+#if 0
+ // Local_Settings* settings = Local_Settings::instance ();
+ // int retval = settings->load (settings_file);
   if (retval !=0 )
 	{
 		CCLOG ("LOAD config ok");
@@ -37,17 +38,19 @@ AppDelegate::AppDelegate() {
 	{
 		CCLOG ("LOAD config error");
 	}
-	#if 0
+	#if 1
 	std::string t = "vendor_id";
-//  std::string wf_name = settings->get_string_value(t);
+  std::string wf_name = settings->get_string_value(t);
 
   CCLOG ("wf_name [%s]",wf_name.c_str());
-  //int port = settings->get_int_value("server_port");
-  //CCLOG ("port  [%d]",port);
+  int port = settings->get_int_value("server_port");
+  CCLOG ("port  [%d]",port);
 
   float temp = settings->get_float_value ("value");
    CCLOG ("temp  [%f]",temp);
 #endif
+#endif
+  
   Local_Storage* storage = Local_Storage::instance();
   storage->set_writeable_path(writeable_path);
   int x = storage->load ();

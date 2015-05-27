@@ -62,7 +62,7 @@ bool TerrainWalkThru::init ()
   rootps->setScale(30.0f);
   rootps->startParticleSystem();
   _player->addChild(rootps);
-#if 0 
+#if 1
   // add BillBoard for test blend
   auto billboard = BillBoard::create("Images/btn-play-normal.png");
   billboard->setPosition3D(Vec3(0,180,0));
@@ -79,9 +79,9 @@ bool TerrainWalkThru::init ()
   _camera->setPosition3D(_player->getPosition3D()+camera_offset);
   _camera->setRotation3D(Vec3(-45,0,0));
   
-  addChild(_player);
+
   addChild(_terrain);
-  
+  addChild(_player);
   GP_Client::Data_Manager* dm = Game_Controller::instance ()->data_manager();
   GP_Client::Game_Data* sub = dm->find_data_by_id(kMove_Msg);
   
